@@ -16,6 +16,20 @@ async def ask_llm(
     async_session: AsyncSession,
     current_user: User
 ) -> LLMResponse:
+    """
+        Асинхронно обрабатывает запрос к языковой модели (LLM).
+
+        Сохраняет как запрос пользователя, так и ответ LLM в базу данных.
+
+        Args:
+            mock_mode: Флаг режима тестирования. Если True, возвращает mock-ответ.
+            question: Объект с вопросом пользователя (LLMMsgBody).
+            async_session: Асинхронная сессия SQLAlchemy для работы с БД.
+            current_user: Текущий аутентифицированный пользователь.
+
+        Returns:
+            LLMResponse: Объект с ответом от языковой модели.
+        """
     try:
         if mock_mode or settings.openrouter.key is None:
             await asyncio.sleep(1.5)

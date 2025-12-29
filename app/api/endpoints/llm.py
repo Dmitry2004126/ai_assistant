@@ -11,12 +11,12 @@ from app.schemas.llm import LLMMsgBody, LLMResponse, MsgResponse
 from app.services.llm import ask_llm
 
 
-router = APIRouter(prefix='/llm', tags=['llm'])\
+router = APIRouter(prefix='/api', tags=['api'])\
 
 
 
 @router.post(
-    '/msg',
+    '/ask',
     summary='Новый запрос к LLM',
     description=LLMMsgBody.Config.docstring,
 )
@@ -38,7 +38,7 @@ async def add_msg(
 
 
 @router.get(
-    '/ten_msgs',
+    '/history',
     summary='Получить последние 10 сообщения',
     description=LLM10MsgsBodyDocs.Config.docstring,
 )

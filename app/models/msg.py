@@ -10,6 +10,18 @@ if TYPE_CHECKING:
 
 
 class Msg(Base):
+    """
+       Модель сообщений (Msg) в базе данных.
+
+       Содержит информацию о вопросах пользователей и ответов LLM.
+
+       Columns:
+           id (int, PK): Уникальный ID сообщения
+           message (text): Текст сообщения
+           date (datetime): Дата/время создания
+           question (bool): Флаг вопроса (True/False)
+           user_id (int, FK): Ссылка на пользователя
+    """
     message: Mapped[str]
     date: Mapped[datetime] = mapped_column(default=datetime.now)
     question: Mapped[bool] = mapped_column(default=True)

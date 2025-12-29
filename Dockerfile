@@ -22,10 +22,6 @@ RUN uv sync --frozen --no-install-project --no-dev
 
 EXPOSE 8000
 
-RUN chmod +x /app/scripts/start_with_migration.sh /app/scripts/start.sh
-
-# Помещаем скрипты в PATH, чтобы их можно было запускать без uv run
 ENV PATH="/app/.venv/bin:$PATH"
 
-ENTRYPOINT ["./scripts/start_with_migration.sh"]
-
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

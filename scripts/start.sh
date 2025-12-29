@@ -1,5 +1,0 @@
-#!/bin/sh
-
-gunicorn app.main:app -c gunicorn_conf.py &
-
-wait
