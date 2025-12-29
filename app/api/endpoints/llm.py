@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Body, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.api.docs.llm import LLM10MsgsBodyDocs
+from app.core.docs.llm import LLM10MsgsBodyDocs
 from app.core.auth.users import current_user
 from app.core.db import get_async_session
 from app.crud.msg import msg_crud

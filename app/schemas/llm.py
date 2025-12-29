@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from app.api.docs.llm import LLMMsgBodyDocs
+from app.core.docs.llm import LLMMsgBodyDocs
 
 
 class LLMMsgBody(BaseModel, LLMMsgBodyDocs):
