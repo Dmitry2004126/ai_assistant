@@ -11,6 +11,8 @@ dependencies = [
     "fastapi-users[sqlalchemy]>=15.0.3",
     "openai>=2.14.0",
     "pydantic-settings>=2.12.0",
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
     "ruff>=0.14.10",
     "sqlalchemy>=2.0.45",
 ]
