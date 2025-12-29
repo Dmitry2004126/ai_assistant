@@ -53,7 +53,7 @@ class JWT(BaseModel):
 
 
 class OpenRouter(BaseModel):
-    key: str = ''
+    key: str = None
     base_url: str = ''
 
 
