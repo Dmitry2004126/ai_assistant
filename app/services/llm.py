@@ -59,8 +59,9 @@ async def ask_llm(
         await async_session.commit()
         return LLMResponse(message=response.choices[0].message.content)
     except Exception as e:
+        status = getattr(e, 'status_code', 500)
         raise HTTPException(
-            status_code=e.status_code,
+            status_code=status,
             detail={
                 "message": str(e),
             }
